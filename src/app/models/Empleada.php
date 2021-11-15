@@ -41,8 +41,8 @@ class Empleada{
 		return "Nombre: $this->nombre. Apellido: $this->apellido. Años de experiencia: $this->experiencia";
 	}
     
-    
+    /*
     $empleada = new Empleada('Cristina','Díaz', 2);
-    echo $empleada;
+    echo $empleada;*/
     
 }

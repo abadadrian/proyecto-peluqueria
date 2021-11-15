@@ -8,9 +8,8 @@
     <body>
         <h1>Corte & Estilo</h1>
         <h2>Salón de belleza</h2>
-        <form method="POST" action="?method=login">
-            <input type="submit" value="Acceso Administrador">
-        </form>
+        <!-- /clase/metodo -->
+        <a href="/login">Acceso administradora</a>
         <br>
     </body>
 </html>

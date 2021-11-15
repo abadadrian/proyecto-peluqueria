@@ -3,53 +3,46 @@
 class App
 {
     public function __construct(){
-        session_start();
-    }
 
-    public function run()
-    {
-
-        if (isset($_GET['method'])) {
-            $method = $_GET['method'];
-            $this->$method();
+        if (isset($_GET['url']) and !empty($_GET['url'])) {
+            $url = $_GET['url'];
         } else {
-            $this->home();
+            $url = 'home';
         }
-    }
 
-    public function home()
-    {
-        include('views/home.php');
-    }
+        $arguments = explode('/', trim($url, '/'));
+        $controllerName = array_shift($arguments);
+        $controllerName=ucwords($controllerName)."Controller";;
 
-    public function login()
-    {
-        include('views/login.php');
-    }
 
-    public function gestorEmpleadas()
-    {
-        include('views/gestorEmpleadas.php');
-    }
-
-    public function homeAdmin(){
-        include('views/homeAdmin.php');
-    }
-
-    public function auth()
-    {
-        $_SESSION['usuario'] = $_POST['usuario'];
-        $_SESSION['password'] = $_POST['contraseña'];
-        if ($_POST['usuario'] == "cristina" && $_POST['contraseña'] == '1234') {
-            header('location:index.php?method=homeAdmin');
+        if (count($arguments)) {
+            $method =  array_shift($arguments);
         } else {
-            echo "Usario o contraseña incorrectos";
-            header("location:views/login.php");
+            $method = "index";
         }
+
+
+
+        $file = "app/controllers/$controllerName" . ".php";
+
+        if(file_exists($file)){
+            require_once $file;
+        } else{
+            header ("HTTP/1.0 404 Not Found");
+        }
+
+        $controllerObject=new $controllerName;
+
+        if (method_exists($controllerName, $method)) {
+            $controllerObject->$method($arguments);
+        } else {
+            header("HTTP/1.0 404 Not Found");
+            echo "No encontrado";
+            die();
+        }
+
+
     }
-    public function logout()
-    {
-      session_destroy();
-      header('Location: index.php?method=login');
-    }
+
+    
 }
