@@ -6,17 +6,15 @@
         <title>Home</title>
     </head>
     <body>
-        <h1>Administrador.</h1>
+        <h1>Home Administrador</h1>
         <form method="POST" action="?method=login">
-            <input type="submit" value="Login">
+        <br>
+        <form method="POST" action="/user/add">
+            <input type="submit" value="Insertar trabajadora">
         </form>
         <br>
-        <form method="POST" action="?method=gestorEmpleadas">
-            <input type="submit" value="Gestor de Empleadas">
-        </form>
-        <br>
-        <form method="POST" action="?method=logout">
+        <form method="POST" action="/login/logout">
             <input type="submit" value="Logout">
         </form>
-    </body>
+        </body>
 </html>
