@@ -21,15 +21,15 @@ class Service extends Model
         //obtener conexión
         $db = Service::db();
         //preparar consulta
-        $sql = "SELECT * FROM users";
+        $sql = "SELECT * FROM services";
         //ejecutar
         $statement = $db->query($sql); // query para ejecutar la consulta
         //el resultado puede ser tomado usan las funciones de de PDO
         //fetch recoge registro a registro. Si hay muchos requiere un bucle
         //fetch_all recoge arrays
-        $users = $statement->fetchAll(PDO::FETCH_CLASS, Service::class);
+        $services = $statement->fetchAll(PDO::FETCH_CLASS, Service::class);
         //retornar
-        return $users;
+        return $services;
     }
 
     /*

@@ -7,10 +7,9 @@
     </head>
     <body>
         <h1>Home Administrador</h1>
-        <form method="POST" action="?method=login">
         <br>
-        <form method="POST" action="/user/add">
-            <input type="submit" value="Insertar trabajadora">
+        <form method="POST" action="/services">
+            <input type="submit" value="Servicios">
         </form>
         <br>
         <form method="POST" action="/login/logout">
