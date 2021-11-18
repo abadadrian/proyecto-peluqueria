@@ -39,7 +39,7 @@ class Service extends Model
     public static function find($id) 
     {
         $db = Service::db();
-        $stmt = $db->prepare('SELECT * FROM users WHERE id=:id');
+        $stmt = $db->prepare('SELECT * FROM services WHERE id=:id');
         $stmt->execute(array(':id' => $id));
         //Para cargar un objeto User debemos usar setFetchMode y fetch
         $stmt->setFetchMode(PDO::FETCH_CLASS, Service::class);

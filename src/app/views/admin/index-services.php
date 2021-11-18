@@ -7,7 +7,7 @@
 <body>
     <div class="starter-template">
       <h1>Listado de servicios</h1>
-      <p><a href="<?="/service/add"?>" class="btn btn-primary">Nuevo</a></p>
+      <p><a href="<?="/services/add"?>" class="btn btn-primary">Nuevo</a></p>
       <table class="table table-striped table-hover">
         <tr>
           <th>Nombre</th>
@@ -22,10 +22,10 @@
           <td><?php echo $service->precio ?></td>
           <td><?php echo $service->tiempo ?></td>
           <td>
-          
-            <a href="<?="/service/show".$service->id ?>" class="btn btn-primary">Ver </a>
-            <a href="<?="/service/edit".$service->id ?>" class="btn btn-primary">Editar </a>
-            <a href="<?="/service/delete".$service->id ?>" class="btn btn-primary">Borrar </a>
+          <!-- La "/" final se deja porque pasa por referencia el ID del servicio así = show/(id) -->
+            <a href="<?="/services/show/".$service->id ?>" class="btn btn-primary">Ver </a>
+            <a href="<?="/services/edit/".$service->id ?>" class="btn btn-primary">Editar </a>
+            <a href="<?="/services/delete/".$service->id ?>" class="btn btn-primary">Borrar </a>
           </td>
           </tr>
         <?php } ?>

@@ -1,16 +1,26 @@
 <!doctype html>
 <html lang="es">
 <head>
-</head>
 <title>Servicios</title>
+</head>
 <body>
   <h1>Servicios peluquería</h1>
     <div class="pelu-services">
-        <ul>
-            <li><strong>Nombre: </strong><?php echo $services->name ?></li>
-            <li><strong>Precio: </strong><?php echo $services->precio ?></li>
-            <li><strong>Tiempo: </strong><?php echo $services->tiempo ?></li>
-        </ul>
+    <table class="table table-striped table-hover">
+        <tr>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Tiempo</th>
+          <th></th>
+        </tr>
+          <tr>
+          <td><?php echo $service->name ?></td>
+          <td><?php echo $service->precio ?></td>
+          <td><?php echo $service->tiempo ?></td>
+          <td>
+          </td>
+          </tr>
+      </table>
     </div>
 </body>
 </html>

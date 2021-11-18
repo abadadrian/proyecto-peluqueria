@@ -12,8 +12,7 @@
 
     <h1>Añadir servicio</h1>
     
-    <form method="post" action="<?="/service/store"?>">
-
+    <form method="post" action='/services/store'>
     <div class="form-group">
         <label>Nombre</label>
         <input type="text" name="name" class="form-control">
@@ -25,10 +24,6 @@
     <div class="form-group">
         <label>Tiempo</label>
         <input type="text" name="birthdate" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input type="text" name="email" class="form-control">
     </div>
     <button type="submit" class="btn btn-default">Enviar</button>
     </form>    
