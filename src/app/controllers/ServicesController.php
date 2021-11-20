@@ -20,7 +20,6 @@ class ServicesController
     public function store()
     {
         $service = new Service();
-        var_dump($service);
         $service->name = $_REQUEST['name'];
         $service->precio = $_REQUEST['precio'];
         $service->tiempo = $_REQUEST['tiempo'];
@@ -41,7 +40,7 @@ class ServicesController
     {
         $id = (int) $arguments[0];
         $service = Service::find($id);
-        require 'app/views/admin/edit.php';
+        require 'app/views/admin/edit-services.php';
     }
     
     public function update()
@@ -54,4 +53,12 @@ class ServicesController
         $service->save();
         header('Location:/user');
     }
+
+    public function delete($arguments)
+    {
+        $id = (int) $arguments[0];
+        $service = Service::find($id);
+        $service->delete();
+        header('Location:/service');
+    } 
 }

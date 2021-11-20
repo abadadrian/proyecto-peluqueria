@@ -11,8 +11,8 @@
       <table class="table table-striped table-hover">
         <tr>
           <th>Nombre</th>
-          <th>Precio</th>
-          <th>Tiempo</th>
+            <th>Precio</th>
+            <th>Tiempo</th>
           <th></th>
         </tr>
 

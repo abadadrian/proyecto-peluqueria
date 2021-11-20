@@ -10,8 +10,7 @@
   <main role="main" class="container">
     <div class="starter-template">
 
-    <h1>Añadir servicio</h1>
-    
+    <h1>Añadir servicio</h1>   
     <form method="post" action='/services/store'>
     <div class="form-group">
         <label>Nombre</label>
@@ -19,11 +18,11 @@
     </div>
     <div class="form-group">
         <label>Precio</label>
-        <input type="text" name="surname" class="form-control">
+        <input type="text" name="precio" class="form-control">
     </div>
     <div class="form-group">
         <label>Tiempo</label>
-        <input type="text" name="birthdate" class="form-control">
+        <input type="text" name="tiempo" class="form-control">
     </div>
     <button type="submit" class="btn btn-default">Enviar</button>
     </form>    

@@ -21,15 +21,15 @@
         >
     </div>
     <div class="form-group">
-        <label>Tiempo</label>
-        <input type="text" name="surname" class="form-control"
-        value="<?php echo $user->surname ?>"
+        <label>Precio</label>
+        <input type="text" name="precio" class="form-control"
+        value="<?php echo $user->precio ?>"
         >
     </div>
     <div class="form-group">
-        <label>Precio</label>
-        <input type="text" name="birthdate" class="form-control"
-        value="<?php echo $user->birthdate->format('Y-m-d') ?>"
+        <label>Tiempo</label>
+        <input type="text" name="tiempo" class="form-control"
+        value="<?php echo $user->tiempo ?>"
         >
     </div>
     <button type="submit" class="btn btn-default">Enviar</button>
