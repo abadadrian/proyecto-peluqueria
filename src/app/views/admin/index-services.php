@@ -7,7 +7,7 @@
 <body>
     <div class="starter-template">
       <h1>Listado de servicios</h1>
-      <p><a href="<?="/services/add"?>" class="btn btn-primary">Nuevo</a></p>
+      <p><a href="<?="/services/create"?>" class="btn btn-primary">Nuevo</a></p>
       <table class="table table-striped table-hover">
         <tr>
           <th>Nombre</th>

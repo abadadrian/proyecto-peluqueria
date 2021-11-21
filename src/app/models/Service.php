@@ -55,12 +55,26 @@ class Service extends Model
         return $user;
     }    
     public function insert(){ 
-        //TODO        
+        $db = Service::db();
+        $stmt = $db->prepare('INSERT INTO services(name, precio, tiempo) VALUES(:name, :precio, :tiempo)');
+        $stmt->bindValue(':name', $this->name);
+        $stmt->bindValue(':precio', $this->precio);
+        $stmt->bindValue(':tiempo)', $this->tiempo);
+        return $stmt->execute();      
     }
     public function delete(){ 
-        //TODO        
+        $db = Service::db();
+        $stmt = $db->prepare('DELETE FROM services WHERE id = :id');
+        $stmt->bindValue(':id', $this->id);
+        return $stmt->execute();       
     }
     public function save(){ 
-        //TODO        
+        $db = Service::db();
+        $stmt = $db->prepare('UPDATE services SET name = :name, precio = :precio, tiempo = :tiempo WHERE id = :id');
+        $stmt->bindValue(':id', $this->id);
+        $stmt->bindValue(':name', $this->name);
+        $stmt->bindValue(':precio', $this->precio);
+        $stmt->bindValue(':tiempo', $this->tiempo);
+        return $stmt->execute();        
     }
 }

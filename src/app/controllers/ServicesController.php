@@ -13,7 +13,7 @@ class ServicesController
         require('app/views/admin/index-services.php');
     }
 
-    public function add(){
+    public function create(){
         require ('app/views/admin/create-services.php');
     }
 

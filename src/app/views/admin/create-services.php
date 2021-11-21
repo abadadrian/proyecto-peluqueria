@@ -9,8 +9,7 @@
 
   <main role="main" class="container">
     <div class="starter-template">
-
-    <h1>Añadir servicio</h1>   
+    <h1>Añadir servicio</h1>
     <form method="post" action='/services/store'>
     <div class="form-group">
         <label>Nombre</label>
