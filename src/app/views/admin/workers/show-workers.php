@@ -1,8 +1,11 @@
 <!doctype html>
 <html lang="es">
 <head>
-<title>Trabajadores</title>
+    <?php require "app/views/admin/parts/head.php" ?>
 </head>
+
+<body>
+    <?php require "app/views/admin/parts/header.php" ?>
 <body>
   <h1>Plantilla de trabajadores</h1>
     <div class="pelu-workers">

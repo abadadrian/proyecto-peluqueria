@@ -1,13 +1,15 @@
 <!doctype html>
 <html lang="es">
 <head>
-<title>Listado de servicios</title>
+    <?php require "app/views/admin/parts/head.php" ?>
 </head>
 
 <body>
+    <?php require "app/views/admin/parts/header.php" ?>
     <div class="starter-template">
       <h1>Listado de servicios</h1>
-      <p><a href="<?="/services/create"?>" class="btn btn-primary">Nuevo</a></p>
+      <a href="<?="/services/create"?>" class="btn btn-primary">Nuevo</a>
+      <a href="<?="/login/volverHomeAdmin"?>" class="btn btn-primary">Home Admin</a>
       <table class="table table-striped table-hover">
         <tr>
           <th>Nombre</th>
@@ -25,12 +27,11 @@
           <!-- La "/" final se deja porque pasa por referencia el ID del servicio así = show/(id) -->
             <a href="<?="/services/show/".$service->id ?>" class="btn btn-primary">Ver </a>
             <a href="<?="/services/edit/".$service->id ?>" class="btn btn-primary">Editar </a>
-            <a href="<?="/services/delete/".$service->id ?>" class="btn btn-primary">Borrar </a>
+            <a href="<?="/services/delete/".$service->id ?>" class="btn btn-danger">Borrar </a>
           </td>
           </tr>
         <?php } ?>
       </table>
-      <p><a href="<?="/login/volverHomeAdmin"?>" class="btn btn-primary">Home Admin</a></p>
     </div>
 
 </body>

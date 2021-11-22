@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="es">
-
 <head>
-<title>Añadir servicio</title>
+    <?php require "app/views/admin/parts/head.php" ?>
 </head>
 
 <body>
-
+    <?php require "app/views/admin/parts/header.php" ?>
   <main role="main" class="container">
     <div class="starter-template">
     <h1>Añadir servicio</h1>

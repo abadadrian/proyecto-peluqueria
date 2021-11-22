@@ -62,4 +62,8 @@ class WorkersController
         $worker->delete();
         header('Location:/workers');
     } 
+
+    public function volverHomeAdmin(){
+        require 'app/views/homeAdmin.php';
+      }
 }

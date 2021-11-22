@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="es">
 <head>
-<title>Servicios</title>
+    <?php require "app/views/admin/parts/head.php" ?>
 </head>
+
 <body>
+    <?php require "app/views/admin/parts/header.php" ?>
   <h1>Servicios peluquería</h1>
     <div class="pelu-services">
     <table class="table table-striped table-hover">

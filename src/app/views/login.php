@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Inicio sesión - Administrador</title>
-    </head>
-    <body>
+<head>
+    <?php require "app/views/admin/parts/head.php" ?>
+</head>
+
+<body>
+    <?php require "app/views/admin/parts/header.php" ?>
         <h3>Introduce </h3>
         <form method="POST" action="/login/auth">
             <label>Nombre: </label><input type="text" value="" name="usuario"><br><br>
