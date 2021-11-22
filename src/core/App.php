@@ -25,15 +25,13 @@ class App
 
 
         $file = "app/controllers/$controllerName" . ".php";
-
         if(file_exists($file)){
             require_once $file;
         } else{
             header ("HTTP/1.0 404 Not Found");
         }
-
+        $controllerName= '\\App\\Controllers\\'. $controllerName;
         $controllerObject=new $controllerName;
-
         if (method_exists($controllerName, $method)) {
             $controllerObject->$method($arguments);
         } else {

@@ -8,6 +8,10 @@
     <body>
         <h1>Home Administrador</h1>
         <br>
+        <form method="POST" action="/workers">
+            <input type="submit" value="Trabajadores">
+        </form>
+        <br>
         <form method="POST" action="/services">
             <input type="submit" value="Servicios">
         </form>

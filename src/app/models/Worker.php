@@ -4,8 +4,7 @@ use PDO;
 // use DateTime;
 use Core\Model;
 require_once 'core/Model.php';
-
-class Service extends Model
+class Worker extends Model
 {
     public function __construct()
     {
@@ -17,17 +16,17 @@ class Service extends Model
     */
     public static function all(){ 
         //obtener conexión
-        $db = Service::db();
+        $db = Worker::db();
         //preparar consulta
-        $sql = "SELECT * FROM services";
+        $sql = "SELECT * FROM workers";
         //ejecutar
         $statement = $db->query($sql); // query para ejecutar la consulta
         //el resultado puede ser tomado usan las funciones de de PDO
         //fetch recoge registro a registro. Si hay muchos requiere un bucle
         //fetch_all recoge arrays
-        $services = $statement->fetchAll(PDO::FETCH_CLASS, Service::class);
+        $worker = $statement->fetchAll(PDO::FETCH_CLASS, Worker::class);
         //retornar
-        return $services;
+        return $worker;
     }
 
     /*
@@ -36,12 +35,12 @@ class Service extends Model
     */
     public static function find($id) 
     {
-        $db = Service::db();
-        $stmt = $db->prepare('SELECT * FROM services WHERE id=:id');
+        $db = Worker::db();
+        $stmt = $db->prepare('SELECT * FROM workers WHERE id=:id');
         $stmt->execute(array(':id' => $id));
         //Para cargar un objeto User debemos usar setFetchMode y fetch
-        $stmt->setFetchMode(PDO::FETCH_CLASS, Service::class);
-        $service = $stmt->fetch(PDO::FETCH_CLASS);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, Worker::class);
+        $worker = $stmt->fetch(PDO::FETCH_CLASS);
         //Las fechas se mostrarán con el parseo de mysql
         //  Si es tipo Date: año-mes-dia
         //  Si es DateTime: año:mes-dia h:m:s
@@ -50,29 +49,29 @@ class Service extends Model
         // echo $this->birthdate->format('d-m-y');
         //clase dateTime
         //$this->birthdate = DateTime::createFromFormat('Y-m-d', $this->birthdate)
-        return $service;
+        return $worker;
     }    
     public function insert(){ 
-        $db = Service::db();
-        $stmt = $db->prepare('INSERT INTO services(name, precio, tiempo) VALUES(:name, :precio, :tiempo)');
+        $db = Worker::db();
+        $stmt = $db->prepare('INSERT INTO workers(name, apellidos, experiencia) VALUES(:name, :apellidos, :experiencia)');
         $stmt->bindValue(':name', $this->name);
-        $stmt->bindValue(':precio', $this->precio);
-        $stmt->bindValue(':tiempo', $this->tiempo);
+        $stmt->bindValue(':apellidos', $this->apellidos);
+        $stmt->bindValue(':experiencia', $this->experiencia);
         return $stmt->execute();  
     }
     public function delete(){ 
-        $db = Service::db();
-        $stmt = $db->prepare('DELETE FROM services WHERE id = :id');
+        $db = Worker::db();
+        $stmt = $db->prepare('DELETE FROM workers WHERE id = :id');
         $stmt->bindValue(':id', $this->id);
         return $stmt->execute();       
     }
     public function save(){ 
-        $db = Service::db();
-        $stmt = $db->prepare('UPDATE services SET name = :name, precio = :precio, tiempo = :tiempo WHERE id = :id');
+        $db = Worker::db();
+        $stmt = $db->prepare('UPDATE workers SET name = :name, apellidos = :apellidos, experiencia = :experiencia WHERE id = :id');
         $stmt->bindValue(':id', $this->id);
         $stmt->bindValue(':name', $this->name);
-        $stmt->bindValue(':precio', $this->precio);
-        $stmt->bindValue(':tiempo', $this->tiempo);
+        $stmt->bindValue(':apellidos', $this->apellidos);
+        $stmt->bindValue(':experiencia', $this->experiencia);
         return $stmt->execute();        
     }
 }

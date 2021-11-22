@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Controllers;
 class LoginController
 {
 
@@ -24,5 +24,9 @@ class LoginController
   public function logout()
   {
     header('location:/home');
+  }
+
+  public function volverHomeAdmin(){
+    require 'app/views/homeAdmin.php';
   }
 }

@@ -30,7 +30,7 @@
           </tr>
         <?php } ?>
       </table>
-      
+      <p><a href="<?="/login/volverHomeAdmin"?>" class="btn btn-primary">Home Admin</a></p>
     </div>
 
 </body>

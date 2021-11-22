@@ -1,5 +1,5 @@
-
 <?php
+namespace App\Controllers;
 use App\Models\Service;
 require_once "app/models/Service.php";
 
@@ -10,11 +10,11 @@ class ServicesController
         //buscar datos
         $services = Service::all();
         //pasar a la vista
-        require('app/views/admin/index-services.php');
+        require('app/views/admin/services/index-services.php');
     }
 
     public function create(){
-        require ('app/views/admin/create-services.php');
+        require ('app/views/admin/services/create-services.php');
     }
 
     public function store()
@@ -24,7 +24,8 @@ class ServicesController
         $service->precio = $_REQUEST['precio'];
         $service->tiempo = $_REQUEST['tiempo'];
         $service->insert();
-        header('Location:/service');
+
+        header('Location: /services');
     }
 
     public function show($args)
@@ -34,13 +35,13 @@ class ServicesController
         $service = Service::find($id);
         // var_dump($service);
         // exit();
-        require('app/views/admin/show-services.php');        
+        require('app/views/admin/services/show-services.php');        
     }   
     public function edit($arguments)
     {
         $id = (int) $arguments[0];
         $service = Service::find($id);
-        require 'app/views/admin/edit-services.php';
+        require 'app/views/admin/services/edit-services.php';
     }
     
     public function update()
@@ -51,7 +52,7 @@ class ServicesController
         $service->precio = $_REQUEST['precio'];
         $service->tiempo = $_REQUEST['tiempo'];
         $service->save();
-        header('Location:/user');
+        header('Location:/services');
     }
 
     public function delete($arguments)
@@ -59,6 +60,6 @@ class ServicesController
         $id = (int) $arguments[0];
         $service = Service::find($id);
         $service->delete();
-        header('Location:/service');
+        header('Location:/services');
     } 
 }
