@@ -3,7 +3,6 @@ namespace App\Models;
 use PDO;
 // use DateTime;
 use Core\Model;
-require_once 'core/Model.php';
 
 class Service extends Model
 {

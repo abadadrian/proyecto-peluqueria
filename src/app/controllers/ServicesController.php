@@ -1,7 +1,6 @@
 <?php
 namespace App\Controllers;
 use App\Models\Service;
-require_once "app/models/Service.php";
 
 class ServicesController
 {

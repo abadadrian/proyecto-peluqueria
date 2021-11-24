@@ -1,7 +1,6 @@
 <?php
 namespace App\Controllers;
 use App\Models\Worker;
-require_once "app/models/Worker.php";
 
 class WorkersController
 {
