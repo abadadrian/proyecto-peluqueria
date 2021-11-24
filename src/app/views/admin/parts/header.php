@@ -1,32 +1,27 @@
-<nav aria-label="breadcrumb">
+<nav class="mb-4" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/workers/volverHomeAdmin.php">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Library</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Data</li>
+    <?php
+    if (isset($_GET['url'])) {
+      $breadItems = explode('/', $_GET['url']);
+      $bLenght = count($breadItems);
+
+      if ($bLenght === 1 && $breadItems[0] === 'admin')
+        echo "<li class='breadcrumb-item active'>Admin</li>";
+      else if ($bLenght === 1 && $breadItems[0] !== 'admin') {
+        echo "<li class='breadcrumb-item'><a href='/admin'>Admin</a></li>";
+        echo "<li class='breadcrumb-item active'>" . ucwords($breadItems[0]) . "</li>";
+      } else {
+        echo "<li class='breadcrumb-item'><a href='/admin'>Admin</a></li>";
+        for ($i = 0; $i < $bLenght; $i++) {
+          $item = array_shift($breadItems);
+          if ($i === $bLenght - 1)
+            echo "<li class='breadcrumb-item active'>" . ucwords($item) . "</li>";
+          else
+            echo "<li class='breadcrumb-item'><a href='/$item'>"
+              . ucwords($item) . "</a></li>";
+        }
+      }
+    } else echo "<li class='breadcrumb-item active'>Home</li>";
+    ?>
   </ol>
 </nav>
-<!-- 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">App MVC</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="<?="/home"?>">Home</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="<?="/user"?>">Usuarios</a>
-      </li>
-      </ul>
-
-   nuevo 
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="<?="/login"?>">Login</a>
-      </li>
-    </ul>
-  </div>
-</nav> -->

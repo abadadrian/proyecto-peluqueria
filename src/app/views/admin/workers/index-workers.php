@@ -10,7 +10,6 @@
     <div class="starter-template">
       <h1>Listado de trabajadores</h1>
       <a class="btn btn-primary" href="<?="/workers/create"?>" role="button">Nuevo</a>
-      <a href="<?="/login/volverHomeAdmin"?>" class="btn btn-primary">Home Admin</a>
 
       <table class="table table-striped table-hover">
         <tr>

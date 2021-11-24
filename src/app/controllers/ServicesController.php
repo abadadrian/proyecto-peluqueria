@@ -23,7 +23,6 @@ class ServicesController
         $service->precio = $_REQUEST['precio'];
         $service->tiempo = $_REQUEST['tiempo'];
         $service->insert();
-
         header('Location: /services');
     }
 

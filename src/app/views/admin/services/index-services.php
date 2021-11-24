@@ -9,7 +9,6 @@
     <div class="starter-template">
       <h1>Listado de servicios</h1>
       <a href="<?="/services/create"?>" class="btn btn-primary">Nuevo</a>
-      <a href="<?="/login/volverHomeAdmin"?>" class="btn btn-primary">Home Admin</a>
       <table class="table table-striped table-hover">
         <tr>
           <th>Nombre</th>

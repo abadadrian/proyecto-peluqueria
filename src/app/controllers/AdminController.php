@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
-class HomeController
+
+class AdminController
 {
     public function index()
     {

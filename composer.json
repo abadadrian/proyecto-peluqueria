@@ -2,10 +2,10 @@
     "name": "alumno/proyecto-peluqueria",
     "autoload": {
         "psr-4": {
-            "Core\\": "core",
-            "Config\\": "config",
-            "App\\Controllers\\": "app/controllers",
-            "App\\Models\\": "app/models"       
+            "Core\\": "html/core",
+            "Config\\": "html/config",
+            "App\\Controllers\\": "html/app/controllers",
+            "App\\Models\\": "html/app/models"       
         }
     },
     "authors": [

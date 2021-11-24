@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Controllers;
+
 class LoginController
 {
 
@@ -14,10 +16,9 @@ class LoginController
     $_SESSION['usuario'] = $_POST['usuario'];
     $_SESSION['clave'] = $_POST['clave'];
     if ($_SESSION['usuario'] == "cristina" && $_SESSION['clave'] == '1234') {
-      require 'app/views/homeAdmin.php';
+      header('Location: /admin');
     } else {
-      echo "Usario o contraseña incorrectos";
-      require "app/views/login.php";
+      header('Location: /login');
     }
   }
 
@@ -26,7 +27,8 @@ class LoginController
     header('location:/home');
   }
 
-  public function volverHomeAdmin(){
+  public function volverHomeAdmin()
+  {
     require 'app/views/homeAdmin.php';
   }
 }

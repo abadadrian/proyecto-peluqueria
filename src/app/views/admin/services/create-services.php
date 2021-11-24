@@ -21,8 +21,9 @@
     <div class="form-group">
         <label>Tiempo</label>
         <input type="text" name="tiempo" class="form-control">
+        <br>
     </div>
-    <button type="submit" class="btn btn-default">Enviar</button>
+    <button type="submit" class="btn btn-primary">Enviar</button>
     </form>    
   </div>
 

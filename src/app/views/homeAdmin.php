@@ -6,7 +6,11 @@
 </head>
 
 <body>
-    <?php require "app/views/admin/parts/header.php" ?>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Home adminsitrador</li>
+        </ol>
+    </nav>
     <h1>Home Administrador</h1>
     <br>
     <form method="POST" action="/workers">
@@ -14,11 +18,11 @@
     </form>
     <br>
     <form method="POST" action="/services">
-    <button type="submit" class="btn btn-dark">Servicios</button>
+        <button type="submit" class="btn btn-dark">Servicios</button>
     </form>
     <br>
     <form method="POST" action="/login/logout">
-    <button type="submit" class="btn btn-dark">Cerrar sesión</button>
+        <button type="submit" class="btn btn-dark">Cerrar sesión</button>
     </form>
     <?php require "app/views/admin/parts/footer.php" ?>
 </body>
