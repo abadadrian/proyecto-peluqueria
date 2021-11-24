@@ -1,0 +1,23 @@
+{
+    "name": "alumno/proyecto-peluqueria",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "src/core/",
+            "App\\Controllers\\": "src/app/controllers/",
+            "App\\Models\\": "src/app/models/"        }
+    },
+    "authors": [
+        {
+            "name": "faroliwi",
+            "email": "abad.simon.adrian.smr@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "dompdf/dompdf": "^1.1",
+        "heroku/heroku-buildpack-php": "*"
+
+    },
+    "require": {
+        "dompdf/dompdf": "^1.1"
+    }
+}
