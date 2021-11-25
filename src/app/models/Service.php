@@ -53,10 +53,12 @@ class Service extends Model
     }    
     public function insert(){ 
         $db = Service::db();
-        $stmt = $db->prepare('INSERT INTO services(name, precio, tiempo) VALUES(:name, :precio, :tiempo)');
+        $stmt = $db->prepare('INSERT INTO services(name, gender, details, price, time) VALUES(:name, :gender, :details, :price, :time)');
         $stmt->bindValue(':name', $this->name);
-        $stmt->bindValue(':precio', $this->precio);
-        $stmt->bindValue(':tiempo', $this->tiempo);
+        $stmt->bindValue(':gender', $this->gender);
+        $stmt->bindValue(':details', $this->details);
+        $stmt->bindValue(':price', $this->price);
+        $stmt->bindValue(':time', $this->time);
         return $stmt->execute();  
     }
     public function delete(){ 
@@ -67,11 +69,12 @@ class Service extends Model
     }
     public function save(){ 
         $db = Service::db();
-        $stmt = $db->prepare('UPDATE services SET name = :name, precio = :precio, tiempo = :tiempo WHERE id = :id');
-        $stmt->bindValue(':id', $this->id);
+        $stmt = $db->prepare('UPDATE services SET name = :name, gender = :gender, details = :details, price = :price, time = :time WHERE id = :id');
         $stmt->bindValue(':name', $this->name);
-        $stmt->bindValue(':precio', $this->precio);
-        $stmt->bindValue(':tiempo', $this->tiempo);
+        $stmt->bindValue(':gender', $this->gender);
+        $stmt->bindValue(':details', $this->details);
+        $stmt->bindValue(':price', $this->price);
+        $stmt->bindValue(':time', $this->time);
         return $stmt->execute();        
     }
 }

@@ -1,16 +1,16 @@
-CREATE DATABASE IF NOT EXISTS `pelu` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `pelu`;
 
 DROP TABLE IF EXISTS `services`;
 CREATE TABLE `services` (
-  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(50) DEFAULT NULL,
-  `precio` varchar(100) DEFAULT NULL,
-  `tiempo` varchar(25) DEFAULT NULL
+  `gender` varchar(10) DEFAULT NULL,
+  `details` varchar(500) DEFAULT NULL,
+  `price` double not null,
+  `time` int
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-INSERT INTO `services` (`id`, `name`, `precio`, `tiempo`) VALUES
-(1, 'Corte y secado', '40€', '1h 30min'),
-(2, 'Tinte', '30€', '2h'),
-(3, 'Mechas', '40€', '1h 30min');
+INSERT INTO `services`(`name`, `gender`, `details`, `price`, `time`) VALUES
+('cortar', 'mujer', 'Cada corte es único y personal',  20, 30),
+('cortar', 'hombre', 'Cada corte es único y personal',  16, 20),
+('balayage', 'mujer', 'Nuestra técnica aporta lumnosidad y naturalidad',  45, 60)

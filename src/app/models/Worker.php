@@ -52,10 +52,11 @@ class Worker extends Model
     }    
     public function insert(){ 
         $db = Worker::db();
-        $stmt = $db->prepare('INSERT INTO workers(name, apellidos, experiencia) VALUES(:name, :apellidos, :experiencia)');
+        $stmt = $db->prepare('INSERT INTO workers(name, surname, email, details) VALUES(:name, :surname, :email, :details)');
         $stmt->bindValue(':name', $this->name);
-        $stmt->bindValue(':apellidos', $this->apellidos);
-        $stmt->bindValue(':experiencia', $this->experiencia);
+        $stmt->bindValue(':surname', $this->surname);
+        $stmt->bindValue(':email', $this->email);
+        $stmt->bindValue(':details', $this->details);
         return $stmt->execute();  
     }
     public function delete(){ 
@@ -66,11 +67,12 @@ class Worker extends Model
     }
     public function save(){ 
         $db = Worker::db();
-        $stmt = $db->prepare('UPDATE workers SET name = :name, apellidos = :apellidos, experiencia = :experiencia WHERE id = :id');
+        $stmt = $db->prepare('UPDATE workers SET name = :name, surname = :surname, email = :email, details = :details WHERE id = :id');
         $stmt->bindValue(':id', $this->id);
         $stmt->bindValue(':name', $this->name);
-        $stmt->bindValue(':apellidos', $this->apellidos);
-        $stmt->bindValue(':experiencia', $this->experiencia);
+        $stmt->bindValue(':surname', $this->surname);
+        $stmt->bindValue(':email', $this->email);
+        $stmt->bindValue(':details', $this->details);
         return $stmt->execute();        
     }
 }

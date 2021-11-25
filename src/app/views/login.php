@@ -5,7 +5,6 @@
 </head>
 
 <body>
-    <?php require "app/views/admin/parts/header.php" ?>
         <h3>Introduce </h3>
         <form method="POST" action="/login/auth">
             <label>Nombre: </label><input type="text" value="" name="usuario"><br><br>

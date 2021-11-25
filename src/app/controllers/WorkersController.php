@@ -20,10 +20,10 @@ class WorkersController
     {
         $worker = new Worker();
         $worker->name = $_REQUEST['name'];
-        $worker->apellidos = $_REQUEST['apellidos'];
-        $worker->experiencia = $_REQUEST['experiencia'];
+        $worker->surname = $_REQUEST['surname'];
+        $worker->email = $_REQUEST['email'];
+        $worker->details = $_REQUEST['details'];
         $worker->insert();
-
         header('Location: /workers');
     }
 

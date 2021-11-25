@@ -20,8 +20,10 @@ class ServicesController
     {
         $service = new Service();
         $service->name = $_REQUEST['name'];
-        $service->precio = $_REQUEST['precio'];
-        $service->tiempo = $_REQUEST['tiempo'];
+        $service->gender = $_REQUEST['gender'];
+        $service->details = $_REQUEST['details'];
+        $service->price = $_REQUEST['price'];
+        $service->time = $_REQUEST['time'];
         $service->insert();
         header('Location: /services');
     }
@@ -47,8 +49,10 @@ class ServicesController
         $id = $_REQUEST['id'];
         $service = Service::find($id);
         $service->name = $_REQUEST['name'];
-        $service->precio = $_REQUEST['precio'];
-        $service->tiempo = $_REQUEST['tiempo'];
+        $service->gender = $_REQUEST['gender'];
+        $service->details = $_REQUEST['details'];
+        $service->price = $_REQUEST['price'];
+        $service->time = $_REQUEST['time'];
         $service->save();
         header('Location:/services');
     }
