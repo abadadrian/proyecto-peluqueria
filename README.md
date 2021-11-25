@@ -1,0 +1,3 @@
+# Proyecto Peluquería - Corte y Estilo
+
+El proyecto consta de una **página web** con su respectiva **base de datos, servicios y empleados.** El usuario **invitado** podrá visualizar la página web y el usuario **administrador** podrá añadir trabajadores, servicios, imagenes...
