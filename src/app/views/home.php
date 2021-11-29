@@ -10,7 +10,6 @@
         <h1>Corte y Estilo</h1>
         <h2>Salón de belleza</h2>
         <!-- /clase/metodo -->
-        <a href="/login">Acceso administradora</a>
-        <br>
+        <a href="/login" class="mb-4">Acceso administradora</a>
     </body>
 </html>

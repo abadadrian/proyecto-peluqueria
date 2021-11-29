@@ -12,7 +12,6 @@ class LoginController
   }
 
   public function login(){
-
     $email = $_POST['email'];
     $password = $_POST['password'];
     $worker = Worker::findbyEmail($email);
@@ -27,7 +26,7 @@ class LoginController
         if(Worker::passwordVerify($password, $worker))
         {
             $_SESSION['worker'] = $worker;
-            header('Location:/home');
+            header('Location:/admin');
         }
         else{
             $_SESSION['message'] = 'Error, la contraseña es incorrecta.';

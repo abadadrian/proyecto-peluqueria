@@ -14,8 +14,8 @@
   </nav>
 
   <div class="starter-template">
-    <h1>Listado de trabajadores</h1>
-    <a class="btn btn-primary" href="<?= "/workers/create" ?>" role="button">Nuevo</a>
+    <h1 class="mb-4">Listado de trabajadores</h1>
+    <a class="btn btn-primary mb-4" href="<?= "/workers/create" ?>" role="button">Nuevo</a>
 
     <table class="table table-striped table-hover">
       <tr>
@@ -23,6 +23,7 @@
         <th>Apellidos</th>
         <th>Email</th>
         <th>Detalles</th>
+        <th>Opciones</th>
       </tr>
       <?php foreach ($workers as $key => $worker) { ?>
         <tr>

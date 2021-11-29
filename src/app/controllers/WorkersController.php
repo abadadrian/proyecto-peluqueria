@@ -22,6 +22,10 @@ class WorkersController
         $worker->name = $_REQUEST['name'];
         $worker->surname = $_REQUEST['surname'];
         $worker->email = $_REQUEST['email'];
+
+        $password = password_hash($_REQUEST['password'], PASSWORD_BCRYPT);
+        $worker->password = $password;
+
         $worker->details = $_REQUEST['details'];
         $worker->insert();
         header('Location: /workers');
@@ -48,8 +52,10 @@ class WorkersController
         $id = $_REQUEST['id'];
         $worker = Worker::find($id);
         $worker->name = $_REQUEST['name'];
-        $worker->apellidos = $_REQUEST['apellidos'];
-        $worker->experiencia = $_REQUEST['experiencia'];
+        $worker->surname = $_REQUEST['surname'];
+        $worker->email = $_REQUEST['email'];
+        $worker->details = $_REQUEST['details'];
+
         $worker->save();
         header('Location:/workers');
     }

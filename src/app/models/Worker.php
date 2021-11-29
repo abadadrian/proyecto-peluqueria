@@ -74,16 +74,19 @@ class Worker extends Model
         $stmt->execute();
         return $password;
     }
+
     public static function passwordVerify($password, $worker)
     {
         return password_verify($password, $worker->password);
     } 
+
     public function insert(){ 
         $db = Worker::db();
-        $stmt = $db->prepare('INSERT INTO workers(name, surname, email, details) VALUES(:name, :surname, :email, :details)');
+        $stmt = $db->prepare('INSERT INTO workers(name, surname, email, password, details) VALUES(:name, :surname, :email, :password, :details)');
         $stmt->bindValue(':name', $this->name);
         $stmt->bindValue(':surname', $this->surname);
         $stmt->bindValue(':email', $this->email);
+        $stmt->bindValue(':password', $this->password);
         $stmt->bindValue(':details', $this->details);
         return $stmt->execute();  
     }

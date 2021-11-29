@@ -15,25 +15,28 @@
 </nav>
     <main role="main" class="container">
       <div class="starter-template">
-        <h1>Añadir trabajador</h1>
+        <h1 class="mb-4">Añadir trabajador</h1>
         <form method="post" action='/workers/store'>
           <div class="form-group">
             <label>Nombre</label>
-            <input type="text" name="name" class="form-control">
+            <input type="text" name="name" class="form-control mb-2">
           </div>
           <div class="form-group">
             <label>Apellidos</label>
-            <input type="text" name="surname" class="form-control">
+            <input type="text" name="surname" class="form-control mb-2">
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="text" name="email" class="form-control">
+            <input type="text" name="email" class="form-control mb-2">
+          </div>
+          <div class="form-group">
+            <label>Contraseña</label>
+            <input type="text" name="password" class="form-control mb-2">
           </div>
           <div class="form-group">
             <label>Detalles</label>
-            <input type="text" name="details" class="form-control">
+            <input type="text" name="details" class="form-control mb-4">
           </div>
-          <br>
           <input class="btn btn-primary" type="submit" value="Enviar">
         </form>
       </div>

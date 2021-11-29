@@ -13,7 +13,7 @@
       <li class="breadcrumb-item active" aria-current="page">Ver</li>
     </ol>
   </nav>
-  <h1>Servicios peluquería</h1>
+  <h1 class="mb-4">Servicios peluquería</h1>
   <div class="pelu-services">
     <table class="table table-striped table-hover">
       <tr>

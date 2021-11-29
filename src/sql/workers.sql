@@ -17,7 +17,4 @@ CREATE TABLE `workers` (
 
 
 INSERT INTO `workers` (`name`, `surname`, `email`, `details`, `birthdate`, `admin`) VALUES
-('Ana', 'Navarro', 'ana@pelu.com', 'Ana es la responsable del centro desde sus inicios. Es creativa y emprendedora, le encanta aportar nuevas ideas.', '2001-4-1', 1)
-
-;
-
+('Ana', 'Navarro', 'ana@pelu.com', 'Ana es la responsable del centro desde sus inicios. Es creativa y emprendedora, le encanta aportar nuevas ideas.', '2001-4-1', 1);

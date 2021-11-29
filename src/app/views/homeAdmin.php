@@ -11,16 +11,13 @@
     <li class="breadcrumb-item active">Home Admin</li>
   </ol>
 </nav>
-    <h1>Home Administrador</h1>
-    <br>
-    <form method="POST" action="/workers">
+    <h1 class="mb-4">Home Administrador</h1>
+    <form method="POST" action="/workers" class="mb-4">
         <button type="submit" class="btn btn-dark">Trabajadores</button>
     </form>
-    <br>
-    <form method="POST" action="/services">
+    <form method="POST" action="/services" class="mb-4">
         <button type="submit" class="btn btn-dark">Servicios</button>
     </form>
-    <br>
     <form method="POST" action="/login/logout">
         <button type="submit" class="btn btn-dark">Cerrar sesión</button>
     </form>

@@ -13,7 +13,7 @@
       <li class="breadcrumb-item active" aria-current="page">Ver</li>
     </ol>
   </nav>
-  <h1>Plantilla de trabajadores</h1>
+  <h1 class="mb-4">Plantilla de trabajadores</h1>
   <div class="pelu-workers">
     <table class="table table-striped table-hover">
       <tr>

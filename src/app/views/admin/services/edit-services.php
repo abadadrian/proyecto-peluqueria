@@ -18,13 +18,13 @@
 
     <form method="post" action="<?="/services/update"?>">
         <input type="hidden" name="id" value="<?php echo $service->id ?>">
-        <div><label>Nombre</label><input type="text" name="name" class="form-control" value="<?php echo $service->name ?>"></div>
-        <div> <label>Género</label><input type="text" name="gender" class="form-control"value="<?php echo $service->gender ?>"></div>
-        <div><label>Detalles</label><input type="text" name="details" class="form-control"value="<?php echo $service->details ?>"></div>
-        <div><label>Precio</label><input type="text" name="price" class="form-control"value="<?php echo $service->price ?>"></div>
-        <div><label>Tiempo</label><input type="text" name="time" class="form-control"value="<?php echo $service->time ?>"></div>
+        <div><label>Nombre</label><input type="text" name="name" class="form-control mb-2" value="<?php echo $service->name ?>"></div>
+        <div> <label>Género</label><input type="text" name="gender" class="form-control mb-2"value="<?php echo $service->gender ?>"></div>
+        <div><label>Detalles</label><input type="text" name="details" class="form-control mb-2"value="<?php echo $service->details ?>"></div>
+        <div><label>Precio</label><input type="text" name="price" class="form-control mb-2"value="<?php echo $service->price ?>"></div>
+        <div><label>Tiempo</label><input type="text" name="time" class="form-control mb-2"value="<?php echo $service->time ?>"></div>
 
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" class="btn btn-primary mt-4">Enviar</button>
     </form>
     </div>
 </body>

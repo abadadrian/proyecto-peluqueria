@@ -11,8 +11,8 @@
     <li class="breadcrumb-item active" aria-current="page">Servicios</li>
   </ol>
 </nav>    <div class="starter-template">
-      <h1>Listado de servicios</h1>
-      <a href="<?="/services/create"?>" class="btn btn-primary">Nuevo</a>
+      <h1 class="mb-4">Listado de servicios</h1>
+      <a href="<?="/services/create"?>" class="btn btn-primary mb-4">Nuevo</a>
       <table class="table table-striped table-hover">
         <tr>
           <th>Nombre</th>
@@ -20,7 +20,7 @@
             <th>Detalles</th>
             <th>Precio</th>
             <th>Tiempo</th>
-          <th></th>
+            <th>Opciones</th>
         </tr>
         <?php foreach ($services as $key => $service) { ?>
           <tr>
@@ -39,6 +39,5 @@
         <?php } ?>
       </table>
     </div>
-
 </body>
 </html>

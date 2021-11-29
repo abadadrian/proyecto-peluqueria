@@ -14,15 +14,15 @@
   <main role="main" class="container">
     <div class="starter-template">
 
-    <h1>Edición de trabajad@r</h1>
+    <h1 class="mb-4">Edición de trabajad@r</h1>
 
     <form method="post" action="<?="/workers/update"?>">
         <input type="hidden" name="id" value="<?php echo $worker->id ?>">
-        <div><label>Nombre</label><input type="text" name="name" class="form-control" value="<?php echo $worker->name ?>"></div>
-        <div> <label>Apellidos</label><input type="text" name="surname" class="form-control"value="<?php echo $worker->surname ?>"></div>
-        <div><label>Email</label><input type="text" name="email" class="form-control"value="<?php echo $worker->email ?>"></div>
-        <div><label>Detalles</label><input type="text" name="details" class="form-control"value="<?php echo $worker->details ?>"></div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+        <div><label>Nombre</label><input type="text" name="name" class="form-control mb-2" value="<?php echo $worker->name ?>"></div>
+        <div> <label>Apellidos</label><input type="text" name="surname" class="form-control mb-2"value="<?php echo $worker->surname ?>"></div>
+        <div><label>Email</label><input type="text" name="email" class="form-control mb-2" value="<?php echo $worker->email ?>"></div>
+        <div><label>Detalles</label><input type="text" name="details" class="form-control mb-2" value="<?php echo $worker->details ?>"></div>
+    <button type="submit" class="btn btn-primary mt-4">Enviar</button>
     </form>
     </div>
 </body>
