@@ -3,13 +3,30 @@
 <head>
     <?php require "app/views/admin/parts/head.php" ?>
 </head>
+<main role="main" class="container">
+    <div class="starter-template">
+      <h1>Inicio de sesión</h1>
+      <form action="<?="/login/login"?>" method="post">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Email</label>
+            <input type="email" class="form-control" id="formGroupExampleInput" placeholder="ejemplo@gmail.com" name="email">
+        </div>
 
-<body>
-        <h3>Introduce </h3>
-        <form method="POST" action="/login/auth">
-            <label>Nombre: </label><input type="text" value="" name="usuario"><br><br>
-            <label>Contraseña: </label><input type="password" value="" name="clave"><br><br>
-            <input type="submit" value="Entrar"> 
-        </form>
-    </body>
-</html>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Contraseña</label>
+            <input type="password" class="form-control" id="formGroupExampleInput" placeholder="******" name="password">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+    </form>
+    
+    </div>
+    <div>
+    <br/>
+      <p><?php echo $_SESSION['message']?></p>
+    </div>
+    </div>
+  </main>
+  <?php require "app/views/admin/parts/footer.php" ?>
+</body>
+<?php require "app/views/admin/parts/scripts.php" ?>

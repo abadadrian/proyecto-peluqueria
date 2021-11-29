@@ -3,25 +3,22 @@ namespace Core;
 class App
 {
     public function __construct(){
-
+        session_start();
         if (isset($_GET['url']) and !empty($_GET['url'])) {
             $url = $_GET['url'];
         } else {
             $url = 'home';
         }
-
+        //   controlador/metodo/argumentos
         $arguments = explode('/', trim($url, '/'));
         $controllerName = array_shift($arguments);
         $controllerName=ucwords($controllerName)."Controller";;
-
 
         if (count($arguments)) {
             $method =  array_shift($arguments);
         } else {
             $method = "index";
         }
-
-
 
         $file = "app/controllers/$controllerName" . ".php";
         if(file_exists($file)){

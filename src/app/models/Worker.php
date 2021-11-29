@@ -1,8 +1,12 @@
 <?php
 namespace App\Models;
+
 use PDO;
-// use DateTime;
+use DateTime;
 use Core\Model;
+
+require_once 'core/Model.php';
+
 class Worker extends Model
 {
     public function __construct()
@@ -50,6 +54,30 @@ class Worker extends Model
         //$this->birthdate = DateTime::createFromFormat('Y-m-d', $this->birthdate)
         return $worker;
     }    
+    public static function findbyEmail($email){
+
+        $db = Worker::db();
+        $stmt = $db->prepare('SELECT * FROM workers WHERE email=:email');
+        $stmt->execute(array(':email' => $email));
+        $stmt->setFetchMode(PDO::FETCH_CLASS, Worker::class);
+        $worker = $stmt->fetch(PDO::FETCH_CLASS);
+        return $worker;
+    }
+    
+    public function setPassword($password)
+    {
+        $password = password_hash($password, PASSWORD_BCRYPT);
+        $db = Worker::db();
+        $stmt = $db->prepare('UPDATE workers SET password = :password WHERE id = :id');
+        $stmt->bindValue(':id', $this->id);
+        $stmt->bindValue(':password', $password);
+        $stmt->execute();
+        return $password;
+    }
+    public static function passwordVerify($password, $worker)
+    {
+        return password_verify($password, $worker->password);
+    } 
     public function insert(){ 
         $db = Worker::db();
         $stmt = $db->prepare('INSERT INTO workers(name, surname, email, details) VALUES(:name, :surname, :email, :details)');
