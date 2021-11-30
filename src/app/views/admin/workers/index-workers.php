@@ -40,6 +40,13 @@
         </tr>
       <?php } ?>
     </table>
+    <select class="custom-select" name="type_id">
+      <option>Seleccionar</option>
+      <?php foreach ($workers as $key => $worker) { 
+        $selected = $worker->name == 'Adrian' ? 'selected': '';?>
+        <option value="<? echo $worker->email?>"<?= $selected?>><?php echo $worker->email?> </option>
+      <?php } ?>
+    </select>
   </div>
 
 </body>
