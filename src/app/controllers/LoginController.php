@@ -22,7 +22,8 @@ class LoginController
             $_SESSION['message'] = 'Error el usuario no existe.';
             header('Location:/login');
         } else {
-            // Comprueba que la contraseña coincida con la contraseña cifrada
+            // $_SESSION['worker'] = $worker;
+            //     header('Location:/admin');
             if (Worker::passwordVerify($password, $worker)) {
                 $_SESSION['worker'] = $worker;
                 header('Location:/admin');

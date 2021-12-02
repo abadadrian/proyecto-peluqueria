@@ -11,7 +11,7 @@
             <label for="formGroupExampleInput">Email</label>
             <input type="email" class="form-control" id="formGroupExampleInput" placeholder="ejemplo@gmail.com" name="email">
         </div>
-        <div class="form-group mb-4">
+        <div class="form-group">
             <label for="formGroupExampleInput">Contraseña</label>
             <input type="password" class="form-control" id="formGroupExampleInput" placeholder="******" name="password">
         </div>
