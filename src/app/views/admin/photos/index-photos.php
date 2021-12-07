@@ -21,6 +21,11 @@
             <input type="file" class="form-control mb-4" id="customFile" name="photo">
             <input class="btn btn-primary" type="submit" value="Enviar">
         </form>
+
+        <!-- Aquí estara el boton que cargara las imagenes en la vista del usuario -->
+        <form action="/photos/show" method="post" enctype="multipart/form-data"> 
+            <input class="btn btn-primary" type="submit" value="Mostrar fotos">
+        </form>
     </div>
 </body>
 
