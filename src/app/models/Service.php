@@ -70,11 +70,12 @@ class Service extends Model
     public function save(){ 
         $db = Service::db();
         $stmt = $db->prepare('UPDATE services SET name = :name, gender = :gender, details = :details, price = :price, time = :time WHERE id = :id');
+        $stmt->bindValue(':id', $this->id);
         $stmt->bindValue(':name', $this->name);
         $stmt->bindValue(':gender', $this->gender);
         $stmt->bindValue(':details', $this->details);
         $stmt->bindValue(':price', $this->price);
         $stmt->bindValue(':time', $this->time);
-        return $stmt->execute();        
+        return $stmt->execute();       
     }
 }
