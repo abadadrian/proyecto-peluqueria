@@ -21,15 +21,23 @@
         <th>Apellidos</th>
         <th>Email</th>
         <th>Detalles</th>
+        <th>Fecha de nacimiento</th>
         <th>Servicio</th>
+
       </tr>
-      <tr>
-        <td><?php echo $worker->name ?></td>
-        <td><?php echo $worker->surname ?></td>
-        <td><?php echo $worker->email ?></td>
-        <td><?php echo $worker->details ?></td>
-        <td><?php  //echo $worker->$service->$name ?></td>
-      </tr>
+        <?php $services = $worker->service ?>
+        <tr>
+          <td><?= $worker->name ?></td>
+          <td><?= $worker->surname ?></td>
+          <td><?= $worker->email ?></td>
+          <td><?= $worker->details ?></td>
+          <td><?= $worker->birthdate  ? $worker->birthdate->format('Y-m-d') : 'Vacío' ?></td>
+          <td>
+            <?php foreach ($services as $key => $service) { ?>
+              <?= $service->name ?>
+            <?php } ?>
+          </td>
+        </tr>
     </table>
   </div>
 </body>

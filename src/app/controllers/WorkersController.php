@@ -1,6 +1,9 @@
 <?php
+
 namespace App\Controllers;
+
 use App\Models\Worker;
+use App\Models\Service;
 
 class WorkersController
 {
@@ -12,8 +15,9 @@ class WorkersController
         require('app/views/admin/workers/index-workers.php');
     }
 
-    public function create(){
-        require ('app/views/admin/workers/create-workers.php');
+    public function create()
+    {
+        require('app/views/admin/workers/create-workers.php');
     }
 
     public function store()
@@ -22,11 +26,10 @@ class WorkersController
         $worker->name = $_REQUEST['name'];
         $worker->surname = $_REQUEST['surname'];
         $worker->email = $_REQUEST['email'];
-
+        $worker->details = $_REQUEST['details'];
+        $worker->birthdate = $_REQUEST['birthdate'];
         $password = password_hash($_REQUEST['password'], PASSWORD_BCRYPT);
         $worker->password = $password;
-
-        $worker->details = $_REQUEST['details'];
         $worker->insert();
         header('Location: /workers');
     }
@@ -36,17 +39,19 @@ class WorkersController
         // $id = (int) $args[0];
         list($id) = $args;
         $worker = Worker::find($id);
-        // var_dump($service);
-        // exit();
-        require('app/views/admin/workers/show-workers.php');        
-    }   
+        $services = Service::all();
+
+        require('app/views/admin/workers/show-workers.php');
+    }
     public function edit($arguments)
     {
         $id = (int) $arguments[0];
         $worker = Worker::find($id);
+        $services = Service::all();
         require 'app/views/admin/workers/edit-workers.php';
     }
-    
+
+
     public function update()
     {
         $id = $_REQUEST['id'];
@@ -55,7 +60,8 @@ class WorkersController
         $worker->surname = $_REQUEST['surname'];
         $worker->email = $_REQUEST['email'];
         $worker->details = $_REQUEST['details'];
-
+        //Añadir el servicio del checkbox:
+        // [Codigo]
         $worker->save();
         header('Location:/workers');
     }
@@ -66,9 +72,10 @@ class WorkersController
         $worker = Worker::find($id);
         $worker->delete();
         header('Location:/workers');
-    } 
+    }
 
-    public function volverHomeAdmin(){
+    public function volverHomeAdmin()
+    {
         require 'app/views/homeAdmin.php';
-      }
+    }
 }

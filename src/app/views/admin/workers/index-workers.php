@@ -23,14 +23,23 @@
         <th>Apellidos</th>
         <th>Email</th>
         <th>Detalles</th>
+        <th>Fecha de nacimiento</th>
+        <th>Servicios</th>
         <th>Opciones</th>
       </tr>
       <?php foreach ($workers as $key => $worker) { ?>
+        <?php $services = $worker->service ?>
         <tr>
           <td><?php echo $worker->name ?></td>
           <td><?php echo $worker->surname ?></td>
           <td><?php echo $worker->email ?></td>
           <td><?php echo $worker->details ?></td>
+          <td><?= $worker->birthdate  ? $worker->birthdate->format('Y-m-d') : 'Vacío' ?></td>
+          <td>
+            <?php foreach ($services as $key => $service) { ?>
+              <?= $service->name ?>
+            <?php } ?>
+          </td>
           <td>
             <!-- La "/" final se deja porque pasa por referencia el ID del servicio así = show/(id) -->
             <a href="<?= "/workers/show/" . $worker->id ?>" class="btn btn-primary">Ver </a>

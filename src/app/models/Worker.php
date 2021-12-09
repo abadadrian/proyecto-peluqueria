@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use PDO;
@@ -11,13 +12,13 @@ class Worker extends Model
 {
     public function __construct()
     {
-        // $this->birthdate = DateTime::createFromFormat('Y-m-d', $this->birthdate);
+        if (isset($this->birthdate)) {
+            $this->birthdate = DateTime::createFromFormat('Y-m-d', $this->birthdate);
+        }
     }
 
-    /*
-    * Método para buscar todos los registros
-    */
-    public static function all(){ 
+    public static function all()
+    {
         //obtener conexión
         $db = Worker::db();
         //preparar consulta
@@ -36,7 +37,7 @@ class Worker extends Model
     * El método find usa funciones preparadas
     * Este método carga un registro a partir de su id
     */
-    public static function find($id) 
+    public static function find($id)
     {
         $db = Worker::db();
         $stmt = $db->prepare('SELECT * FROM workers WHERE id=:id');
@@ -52,9 +53,10 @@ class Worker extends Model
 
         $worker = $stmt->fetch(PDO::FETCH_CLASS);
         return $worker;
-    }    
-    
-    public static function findbyEmail($email){
+    }
+
+    public static function findbyEmail($email)
+    {
 
         $db = Worker::db();
         $stmt = $db->prepare('SELECT * FROM workers WHERE email=:email');
@@ -63,7 +65,7 @@ class Worker extends Model
         $worker = $stmt->fetch(PDO::FETCH_CLASS);
         return $worker;
     }
-    
+
     public function setPassword($password)
     {
         $password = password_hash($password, PASSWORD_BCRYPT);
@@ -78,34 +80,55 @@ class Worker extends Model
     public static function passwordVerify($password, $worker)
     {
         return password_verify($password, $worker->password);
-    } 
+    }
 
-    public function insert(){ 
+    public function insert()
+    {
         $db = Worker::db();
-        $stmt = $db->prepare('INSERT INTO workers(name, surname, email, password, details) VALUES(:name, :surname, :email, :password, :details)');
+        $stmt = $db->prepare('INSERT INTO workers(name, surname, email, password, birthdate,  details) VALUES(:name, :surname, :email, :password, :birthdate,  :details)');
         $stmt->bindValue(':name', $this->name);
         $stmt->bindValue(':surname', $this->surname);
         $stmt->bindValue(':email', $this->email);
         $stmt->bindValue(':password', $this->password);
+        $stmt->bindValue(':birthdate', $this->birthdate);
         $stmt->bindValue(':details', $this->details);
-        return $stmt->execute();  
+        return $stmt->execute();
     }
-    public function delete(){ 
+    public function delete()
+    {
         $db = Worker::db();
         $stmt = $db->prepare('DELETE FROM workers WHERE id = :id');
         $stmt->bindValue(':id', $this->id);
-        return $stmt->execute();       
+        return $stmt->execute();
     }
-    public function save(){ 
+    public function save()
+    {
         $db = Worker::db();
-        $stmt = $db->prepare('UPDATE workers SET name = :name, surname = :surname, email = :email, details = :details WHERE id = :id');
+        $stmt = $db->prepare('UPDATE workers SET name = :name, surname = :surname, email = :email, birthdate = :birthdate,  details = :details WHERE id = :id');
         $stmt->bindValue(':id', $this->id);
         $stmt->bindValue(':name', $this->name);
         $stmt->bindValue(':surname', $this->surname);
         $stmt->bindValue(':email', $this->email);
+        $stmt->bindValue(':birthdate', $this->birthdate);
         $stmt->bindValue(':details', $this->details);
-        return $stmt->execute();        
+        return $stmt->execute();
     }
 
-    
+    public function __get($atributoDesconocido)
+    {
+        if (method_exists($this, $atributoDesconocido)) {
+            $this->$atributoDesconocido = $this->$atributoDesconocido();
+            return $this->$atributoDesconocido;
+        }
+    }
+
+    public function service()
+    {
+        $db = Worker::db();
+        $stmt = $db->prepare('SELECT * FROM workers_services ws join services s on (s.id= ws.services_id) WHERE ws.workers_id = :id');
+        $stmt->bindValue(':id', $this->id);
+        $stmt->execute();
+        $workers_services = $stmt->fetchAll(PDO::FETCH_CLASS, Service::class);
+        return $workers_services;
+    }
 }

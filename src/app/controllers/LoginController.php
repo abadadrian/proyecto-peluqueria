@@ -22,8 +22,6 @@ class LoginController
             $_SESSION['message'] = 'Error el usuario no existe.';
             header('Location:/login');
         } else {
-            // $_SESSION['worker'] = $worker;
-            //     header('Location:/admin');
             if (Worker::passwordVerify($password, $worker)) {
                 $_SESSION['worker'] = $worker;
                 header('Location:/admin');
@@ -36,8 +34,6 @@ class LoginController
 
     public function logout()
     {
-        unset($_SESSION['worker']);
-        unset($_SESSION['message']);
         session_destroy();
         require "app/views/login.php";
     }

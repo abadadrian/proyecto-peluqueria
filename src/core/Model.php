@@ -10,12 +10,6 @@ use PDOException;
 */
 class Model
 {
-
-    function __construct()
-    {
-        # code...
-    }
-
     protected static function db()
     {
         try {
