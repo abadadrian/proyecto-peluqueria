@@ -41,9 +41,7 @@ class Worker extends Model
         $db = Worker::db();
         $stmt = $db->prepare('SELECT * FROM workers WHERE id=:id');
         $stmt->execute(array(':id' => $id));
-        //Para cargar un objeto User debemos usar setFetchMode y fetch
-
-
+        $stmt->setFetchMode(PDO::FETCH_CLASS, Worker::class);
         //$workers-services = $stmt->fetch(PDO::FETCH_CLASS):
         //$stmt2 = $db->prepare('SELECT * FROM service WHERE id = :id');
         //$stmt2->bienValue(':id','$workers_services->service_id)          <-
@@ -52,20 +50,10 @@ class Worker extends Model
         //$services = $stmt2->fetch(PDO::FETCH_CLASS);
         //return $services;
 
-
-
-        $stmt->setFetchMode(PDO::FETCH_CLASS, Worker::class);
         $worker = $stmt->fetch(PDO::FETCH_CLASS);
-        //Las fechas se mostrarán con el parseo de mysql
-        //  Si es tipo Date: año-mes-dia
-        //  Si es DateTime: año:mes-dia h:m:s
-        //Php puede manejar de forma nativa datos fecha:
-        //  funciones: date() o strtotime()
-        // echo $this->birthdate->format('d-m-y');
-        //clase dateTime
-        //$this->birthdate = DateTime::createFromFormat('Y-m-d', $this->birthdate)
         return $worker;
     }    
+    
     public static function findbyEmail($email){
 
         $db = Worker::db();

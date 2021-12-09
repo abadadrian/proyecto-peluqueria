@@ -23,6 +23,16 @@ class Photo extends Model
         return $photos;
     }
 
+    public static function find($id) 
+    {
+        $db = Model::db();
+        $stmt = $db->prepare('SELECT * FROM photos WHERE id=:id');
+        $stmt->execute(array(':id' => $id));
+        $stmt->setFetchMode(PDO::FETCH_CLASS, Photo::class);
+        $photo = $stmt->fetch(PDO::FETCH_CLASS);
+        return $photo;
+    }    
+
     public function insert()
     {
         $db = Photo::db();
@@ -30,5 +40,21 @@ class Photo extends Model
         $stmt->bindValue(':name', $this->name);
         $stmt->bindValue(':path', $this->path);
         return $stmt->execute();
+    }
+
+    public function delete(){ 
+        $db = Photo::db();
+        $stmt = $db->prepare('DELETE FROM photos WHERE id = :id');
+        $stmt->bindValue(':id', $this->id);
+        return $stmt->execute();       
+    }
+
+    public function save(){ 
+        $db = Photo::db();
+        $stmt = $db->prepare('UPDATE workers SET name = :name, path = :path WHERE id = :id');
+        $stmt->bindValue(':id', $this->id);
+        $stmt->bindValue(':name', $this->name);
+        $stmt->bindValue(':path', $this->path);
+        return $stmt->execute();       
     }
 }

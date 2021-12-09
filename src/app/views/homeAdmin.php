@@ -18,7 +18,7 @@
     <form method="POST" action="/services" class="mb-4">
         <button type="submit" class="btn btn-dark">Servicios</button>
     </form>
-    <form method="POST" action="/photos" class="mb-4">
+    <form method="POST" action="/photos/index" class="mb-4">
         <button type="submit" class="btn btn-dark">Añadir foto</button>
     </form>
     <form method="POST" action="/login/logout">
