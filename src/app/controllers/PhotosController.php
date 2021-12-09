@@ -35,7 +35,7 @@ class PhotosController
     public function show(){
 
         //Este método llamará al all y luego mostrará la vista
-        $photo = Photo::all();
+        $photos = Photo::all();
         
         require('app/views/admin/photos/show-photos.php');
         

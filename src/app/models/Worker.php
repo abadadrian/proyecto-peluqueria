@@ -42,6 +42,18 @@ class Worker extends Model
         $stmt = $db->prepare('SELECT * FROM workers WHERE id=:id');
         $stmt->execute(array(':id' => $id));
         //Para cargar un objeto User debemos usar setFetchMode y fetch
+
+
+        //$workers-services = $stmt->fetch(PDO::FETCH_CLASS):
+        //$stmt2 = $db->prepare('SELECT * FROM service WHERE id = :id');
+        //$stmt2->bienValue(':id','$workers_services->service_id)          <-
+        //$stmt2->execute();
+        //$stmt2->setFetchMode(PDO::FETCH_CLASS, Service::class);
+        //$services = $stmt2->fetch(PDO::FETCH_CLASS);
+        //return $services;
+
+
+
         $stmt->setFetchMode(PDO::FETCH_CLASS, Worker::class);
         $worker = $stmt->fetch(PDO::FETCH_CLASS);
         //Las fechas se mostrarán con el parseo de mysql
@@ -106,4 +118,6 @@ class Worker extends Model
         $stmt->bindValue(':details', $this->details);
         return $stmt->execute();        
     }
+
+    
 }

@@ -21,12 +21,14 @@
         <th>Apellidos</th>
         <th>Email</th>
         <th>Detalles</th>
+        <th>Servicio</th>
       </tr>
       <tr>
         <td><?php echo $worker->name ?></td>
         <td><?php echo $worker->surname ?></td>
         <td><?php echo $worker->email ?></td>
         <td><?php echo $worker->details ?></td>
+        <td><?php  //echo $worker->$service->$name ?></td>
       </tr>
     </table>
   </div>

@@ -21,11 +21,13 @@
         <th>Nombre</th>
         <th>Foto</th>
       </tr>
+      <?php foreach ($photos as $key => $photo) { ?>
       <tr>
         <td><?php echo $photo->name ?></td>
         <td><?php echo $photo->photo ?></td>
         
       </tr>
+      <?php } ?>
     </table>
   </div>
 </body>
