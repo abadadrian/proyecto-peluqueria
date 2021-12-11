@@ -24,11 +24,7 @@
     <form method="POST" action="/login/logout">
         <button type="submit" class="btn btn-dark">Cerrar sesión</button>
     </form>
-    <!-- <form class="mt-4" action="/login/procesarsubida" method="post" enctype="multipart/form-data">
-        Escoja un fichero
-        <input type="file" name="fichero">
-        <input type="submit" value="subir fichero">
-    </form> -->
+    
 
     <?php require "app/views/admin/parts/footer.php" ?>
 </body>

@@ -60,8 +60,6 @@ class WorkersController
         $worker->surname = $_REQUEST['surname'];
         $worker->email = $_REQUEST['email'];
         $worker->details = $_REQUEST['details'];
-        //Añadir el servicio del checkbox:
-        // [Codigo]
         $worker->save();
         header('Location:/workers');
     }
