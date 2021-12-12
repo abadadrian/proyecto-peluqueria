@@ -51,7 +51,7 @@ class Photo extends Model
 
     public function save(){ 
         $db = Photo::db();
-        $stmt = $db->prepare('UPDATE workers SET name = :name, path = :path WHERE id = :id');
+        $stmt = $db->prepare('UPDATE photos SET name = :name, path = :path WHERE id = :id');
         $stmt->bindValue(':id', $this->id);
         $stmt->bindValue(':name', $this->name);
         $stmt->bindValue(':path', $this->path);

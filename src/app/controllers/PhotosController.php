@@ -1,16 +1,13 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\Photo;
 
+use App\Models\Photo;
 
 class PhotosController
 {
     public function index()
     {
-        //buscar datos
-        $photos = Photo::all();
-        //pasar a la vista
         require('app/views/admin/photos/index-photos.php');
     }
 
@@ -32,22 +29,13 @@ class PhotosController
         move_uploaded_file($image, $rutaSubida);
 
         //Aquí lo redirigirá de nuevo a la misma vista en la que estaba
-        header('Location: /photos/index ');
+        header('Location: /photos ');
     }
-     
-
-    public function delete($arguments)
-    {
-        $id = (int) $arguments[0];
-        $photo = Photo::find($id);
-        $photo->delete();
-        header('Location:/photos/show');
-    } 
 
     public function show(){
 
         //Este método llamará al all y luego mostrará la vista
-        $photos = Photo::all();
+        $photo = Photo::all();
         
         require('app/views/admin/photos/show-photos.php');
         

@@ -16,7 +16,7 @@
             <input type="password" class="form-control" id="formGroupExampleInput" placeholder="******" name="password">
         </div>
 
-        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+        <button type="submit" class="btn btn-dark mt-2">Iniciar sesión</button>
     </form>
     </div>
     <div>

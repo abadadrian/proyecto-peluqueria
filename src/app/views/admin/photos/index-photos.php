@@ -20,7 +20,7 @@
             <label>Nombre</label>
             <input type="text" name="name" class="mb-3">
             <input type="file" class="form-control mb-4" id="customFile" name="photo">
-            <input class="btn btn-primary mb-4" type="submit" value="Enviar">
+            <input class="btn btn-primary mb-4" type="submit" value="Subir foto">
         </form>
 
         <!-- Aquí estara el boton que cargara las imagenes en la vista del usuario -->

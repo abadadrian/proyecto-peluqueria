@@ -17,11 +17,13 @@ class WorkersController
 
     public function create()
     {
+        $services = Service::all();
         require('app/views/admin/workers/create-workers.php');
     }
 
     public function store()
     {
+        // requiredForms();
         $worker = new Worker();
         $worker->name = $_REQUEST['name'];
         $worker->surname = $_REQUEST['surname'];
@@ -31,7 +33,12 @@ class WorkersController
         $password = password_hash($_REQUEST['password'], PASSWORD_BCRYPT);
         $worker->password = $password;
         $worker->insert();
+        
         header('Location: /workers');
+    }
+
+    public function requiredForms(){
+
     }
 
     public function show($args)
@@ -60,6 +67,7 @@ class WorkersController
         $worker->surname = $_REQUEST['surname'];
         $worker->email = $_REQUEST['email'];
         $worker->details = $_REQUEST['details'];
+        $worker->birthdate = $_REQUEST['birthdate'];
         $worker->save();
         header('Location:/workers');
     }
