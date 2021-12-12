@@ -23,7 +23,6 @@ class WorkersController
 
     public function store()
     {
-        // requiredForms();
         $worker = new Worker();
         $worker->name = $_REQUEST['name'];
         $worker->surname = $_REQUEST['surname'];
@@ -33,12 +32,8 @@ class WorkersController
         $password = password_hash($_REQUEST['password'], PASSWORD_BCRYPT);
         $worker->password = $password;
         $worker->insert();
-        
+
         header('Location: /workers');
-    }
-
-    public function requiredForms(){
-
     }
 
     public function show($args)
