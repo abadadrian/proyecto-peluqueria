@@ -29,15 +29,24 @@ class PhotosController
         move_uploaded_file($image, $rutaSubida);
 
         //Aquí lo redirigirá de nuevo a la misma vista en la que estaba
-        header('Location: /photos ');
+        header('Location: /photos/index ');
     }
 
     public function show(){
 
         //Este método llamará al all y luego mostrará la vista
-        $photo = Photo::all();
+        $photos = Photo::all();
         
         require('app/views/admin/photos/show-photos.php');
+        
+    }
+
+    public function delete($arguments){
+
+        $id = (int) $arguments[0];
+        $photo = Photo::find($id);
+        $photo->delete();
+        header('Location:/photos/show');
         
     }
 }

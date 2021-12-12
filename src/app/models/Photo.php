@@ -36,7 +36,7 @@ class Photo extends Model
     public function insert()
     {
         $db = Photo::db();
-        $stmt = $db->prepare("INSERT into photos (name, path) VALUES (:name, :path)");
+        $stmt = $db->prepare('INSERT into photos (name, path) VALUES (:name, :path)');
         $stmt->bindValue(':name', $this->name);
         $stmt->bindValue(':path', $this->path);
         return $stmt->execute();
