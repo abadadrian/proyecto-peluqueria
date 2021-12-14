@@ -4,6 +4,9 @@ use App\Models\Service;
 
 class ServicesController
 {
+    public function style(){
+        require('app/views/admin/services/services.php');
+    }
     public function index()
     {
         //buscar datos

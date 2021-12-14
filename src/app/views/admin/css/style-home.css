@@ -1,0 +1,14 @@
+@font-face {
+  font-family: Tungsten;
+  src: url("../fonts/Tungsten-Bold.ttf");
+}
+
+h1{
+    font-family: Tungsten;
+    color:rgb(37, 37, 37);
+    font-size: 65px;
+}
+
+body{
+  font-family: Arial, sans-serif
+}
