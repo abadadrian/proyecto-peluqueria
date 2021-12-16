@@ -35,7 +35,7 @@ class LoginController
     public function logout()
     {
         session_destroy();
-        require "app/views/login.php";
+        header('Location:/');
     }
 
     public function procesarsubida()

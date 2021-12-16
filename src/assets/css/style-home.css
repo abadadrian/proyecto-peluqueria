@@ -3,12 +3,15 @@
   src: url("../fonts/Tungsten-Bold.ttf");
 }
 
-h1{
-    font-family: Tungsten;
-    color:rgb(37, 37, 37);
-    font-size: 65px;
+@font-face {
+  font-family: Manjari;
+  src: url("../fonts/Manjari-Thin.ttf");
 }
 
 body{
   font-family: Arial, sans-serif
+}
+
+#title{
+  font-family: Manjari;
 }
