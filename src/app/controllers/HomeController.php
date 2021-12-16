@@ -11,5 +11,10 @@ class HomeController
     public function style(){
         require('assets/index.html');
     }
+
+    public function home(){
+        header('Location:/');
+    }
+
 }
 

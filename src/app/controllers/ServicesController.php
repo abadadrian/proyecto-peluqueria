@@ -15,6 +15,10 @@ class ServicesController
         require('app/views/admin/services/index-services.php');
     }
 
+    public function home(){
+        require('app/views/service.php');
+    }
+
     public function create(){
         require ('app/views/admin/services/create-services.php');
     }
