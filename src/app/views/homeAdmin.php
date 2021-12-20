@@ -12,7 +12,8 @@
             <li class="breadcrumb-item active mt-3">Home Admin</li>
         </ol>
     </nav>
-    <h1 class="mb-4">Home Administrador</h1>
+    <h1 class="mb-4">Bienvenido <?= $_SESSION['worker']->name ?>
+    </h1>
     <?php require "app/views/admin/parts/footer.php" ?>
 </body>
 <?php require "app/views/admin/parts/scripts.php" ?>

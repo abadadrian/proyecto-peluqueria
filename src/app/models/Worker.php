@@ -107,7 +107,8 @@ class Worker extends Model
         $stmt = $db->prepare('UPDATE workers SET name = :name, surname = :surname, email = :email, birthdate = :birthdate,  details = :details WHERE id = :id');
         $stmt->bindValue(':id', $this->id);
         $stmt->bindValue(':name', $this->name);
-        $stmt->bindValue(':surname', $this->surname);
+        $stmt->bindValue(':surname
+        ', $this->surname);
         $stmt->bindValue(':email', $this->email);
         $stmt->bindValue(':birthdate', $this->birthdate);
         $stmt->bindValue(':details', $this->details);

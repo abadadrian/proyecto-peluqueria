@@ -17,7 +17,6 @@
   <main role="main" class="container">
     <div class="starter-template">
       <h1 class="mb-4">Añadir trabajador</h1>
-      <p><span class="text-danger">* Campo obligatorio</span></p>
       <form method="post" action='/workers/store'>
         <div class="form-group">
           <label>Nombre</label>
