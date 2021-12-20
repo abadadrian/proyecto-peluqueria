@@ -68,8 +68,8 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto">
                     <a href="/home/home" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">Servicios</a>
-                    <a href="/workers/home" class="nav-item nav-link">Trabajadores</a>
+                    <a href="/services/home" class="nav-item nav-link">Servicios</a>
+                    <a href="#" class="nav-item nav-link">Trabajadores</a>
                     <a href="/login" class="nav-item nav-link">Acceso administrador</a>
                 </div>
             </div>
@@ -83,11 +83,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>Servicios</h2>
+                    <h2>Trabajadores</h2>
                 </div>
                 <div class="col-12">
                     <a href="/home/home">Home</a>
-                    <a href="/services/home">Servicios</a>
+                    <a href="#">Trabajadores</a>
                 </div>
             </div>
         </div>
@@ -99,97 +99,29 @@
     <div class="service">
         <div class="container">
             <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>¿Qué hacemos?</p>
-                <h2>Nuestros servicios</h2>
+                <p>Plantilla</p>
+                <h2>Nuestro equipo</h2>
             </div>
+
+
             <div class="row">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="flaticon-workout"></i>
+                <?php
+                foreach ($workers as $key => $worker) { ?>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="flaticon-workout"></i>
+                            </div>
+                            <h3>
+                                <?= $worker->name . "&nbsp;" . $worker->surname ?>
+                            </h3>
+                            <p style="text-align:center">
+                                <?= $worker->details ?>
+                            </p>
                         </div>
-                        <h3>Corte</h3>
-                        <ul class="listas-noestilo">
-                            <li>Corte de pelo mujer</li>
-                            <li>Corte de pelo hombre</li>
-                            <li>Corte de pelo infantil</li>
-                            <li>Corte de puntas</li>
-                            <li>Diseño barba</li>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="flaticon-workout"></i>
-                        </div>
-                        <h3>Peinado</h3>
-                        <ul class="listas-noestilo">
-                            <li>Peinado</li>
-                            <li>Peinado con rulos</li>
-                            <li>Recogidos</li>
-                            <li>Peinado con plancha</li>
-                            <li>Peinado extensiones y pelucas</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="flaticon-workout"></i>
-                        </div>
-                        <h3>Tinte</h3>
-                        <ul class="listas-noestilo">
-                            <li>Tinte o baño de color</li>
-                            <li>Retoque color zona</li>
-                            <li>Matizados</li>
-                            <li>Mordientes</li>
-                            <li>Prepigmentación</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="flaticon-workout"></i>
-                        </div>
-                        <h3>Mechas</h3>
-                        <ul class="listas-noestilo">
-                            <li>Mechas</li>
-                            <li>Decolororación</li>
-                            <li>Blending</li>
-                            <li>Californianas</li>
-                            <li>Baby lights</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="flaticon-workout"></i>
-                        </div>
-                        <h3>Moldeado</h3>
-                        <ul class="listas-noestilo">
-                            <li>Moldeado</li>
-                            <li>Desrizado</li>
-                            <li>Alisado keratina</li>
-                            <li>Alisado ácido hialurónico</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="flaticon-workout"></i>
-                        </div>
-                        <h3>Tratamiento</h3>
-                        <ul class="listas-noestilo">
-                            <li>Ritual Express</li>
-                            <li>Ritual Intensive</li>
-                            <li>Botox capilar</li>
-                            <li>Anticaída</li>
-                        </ul>
-                    </div>
-                </div>
+                <?php }
+                ?>
             </div>
         </div>
     </div>

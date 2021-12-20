@@ -21,6 +21,11 @@ class WorkersController
         require('app/views/admin/workers/create-workers.php');
     }
 
+    public function home(){
+        $workers = Worker::all();
+        require('app/views/team.php');
+    }
+
     public function store()
     {
         $worker = new Worker();
